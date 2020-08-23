@@ -1,5 +1,8 @@
 package ex.example.linkedListEx;
 
+import ex.example.linkedListEx.common.LinkedList;
+import ex.example.linkedListEx.common.LinkedList.Node;
+
 // 5th 
 /* 
  * 단방향 Linked List에서 중간에 있는 노드를 삭제 하시요
@@ -9,6 +12,27 @@ package ex.example.linkedListEx;
 
 public class MiddleNodeDel {
     public static void main(String[] args) {
-        
+        LinkedList lld = new LinkedList();
+        lld.append(2);
+        lld.append(5);
+        lld.append(3);
+        lld.append(2);
+        lld.append(4);
+        lld.append(2);
+        lld.append(2);
+        lld.retrieve();
+        deleteNode(lld.get(3));
+        lld.retrieve();
     }   
+
+    private static boolean deleteNode(Node node) {
+        if (node == null || node.next == null)
+            return false;
+
+        Node next = node.next;
+        node.data = next.data;
+        node.next = next.next;
+        
+        return true;
+    }
 }

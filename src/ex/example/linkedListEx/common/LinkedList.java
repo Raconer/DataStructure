@@ -7,9 +7,26 @@ public class LinkedList {
         header = new Node();
     }
     
-    public class Node{
+    public static class Node{
         public int data;
         public Node next = null;
+
+        public Node(){}
+
+        public Node(int data){
+            this.data = data;
+        }
+    }
+
+    public Node get(int cnt){
+        Node n = header;
+        for(int i = 0; i < cnt; i++ ){
+            if(n.next == null){
+                break;
+            }
+            n = n.next;
+        }
+        return n;
     }
 
     public void append(int data){
