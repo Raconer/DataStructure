@@ -1,5 +1,12 @@
 # Data Structure Study
 
+### 0. Debug와 Run의 차이
+
+ - Debug란?
+ > 컴퓨터 프로그램의 정확성이나 논리적인 오류를 찾아 내는 테스트 과정을 뜻한다.
+ 
+ - run이란?
+
 ### 1. Linked List 란?
 
 > 길이가 정해 져 있지 않은 데이터의 연결된 집합
