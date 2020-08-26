@@ -10,21 +10,21 @@ public class Quick {
     public Quick(){
     }
 
-    public void quickSort(int[] arr, int start, int end){
-        int part2 = partition(arr, start, end);
-        if(start < part2 -1){
-            quickSort(arr, start, part2 -1);
+    public void quickSort(int[] arr,int start, int end){
+        int part = partition(arr, start, end);
+        if(start < part -1){
+            quickSort(arr, start, part-1);
         }
-        if(part2 < end){
-            quickSort(arr, part2, end);
+        if(part < end){
+            quickSort(arr, part, end);    
         }
     }
 
-    public int partition(int[] arr, int start, int end){
+    public int partition(int[] arr,int start, int end){
         int pivot = arr[(start + end)/2];
         while(start <= end){
-            while(arr[start] < pivot ) start++;
-            while(arr[end] > pivot ) end--;
+            while(arr[start] < pivot) start++;
+            while(pivot < arr[end]) end--;
             if(start <= end){
                 swap(arr, start, end);
                 start++;
@@ -34,19 +34,10 @@ public class Quick {
         return start;
     }
 
-    public  void swap(int[] arr, int start, int end){
+    public void swap(int[] arr, int start, int end){
         int temp = arr[start];
         arr[start] = arr[end];
         arr[end] = temp;
     }
 
-    public void arrayString(int[] arr){
-        int length = arr.length;
-        System.out.println();
-        for(int i = 0; i < length; i++ ){
-            System.out.print(arr[i]);
-            if( i < length - 1)
-                System.out.print(" -> ");
-        }
-    }
 }

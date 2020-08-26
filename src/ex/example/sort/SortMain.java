@@ -1,6 +1,8 @@
 package ex.example.sort;
 
+import ex.example.sort.common.Insert;
 import ex.example.sort.common.Quick;
+import ex.example.sort.common.Select;
 
 public class SortMain {
     int[] sortList = {1, 2, 3, 4, 5 ,6 ,7 ,8 ,9, 10};
@@ -25,12 +27,29 @@ public class SortMain {
         return sortList;
     }
 
+    public static void arrayString(int[] arr){
+        int length = arr.length;
+        System.out.println();
+        for(int i = 0; i < length; i++ ){
+            System.out.print(arr[i]);
+            if( i < length - 1)
+                System.out.print(" -> ");
+        }
+    }
+
     public static void main(final String[] args) {
-        final int size = 5;
+        final int size = 30;
         final int[] arr = randomList(size);
-        final Quick quick = new Quick();
-        quick.arrayString(arr);
-        quick.quickSort(arr, 0, size-1);
-        quick.arrayString(arr);
+        // arrayString(arr);
+        // // final Quick quick = new Quick();
+        // // quick.quickSort(arr, 0, size-1);
+        // // arrayString(arr);
+        // // Insert insert = new Insert();
+        // // insert.InsertSort(arr);
+        // // arrayString(arr);
+        Select select = new Select();
+        select.selectSort(arr);
+        arrayString(arr);
+
     }
 }
